@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.container{
+			width:900px;
+			height:800px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.bg-light{
+			background-color:white;
+			border:1px solid lightgray;
+		}
+		.he-1{
+			height:100px;
+		}
+		.he-2{
+			height:550px;
+		}
+		.he-3{
+			height:500px;
+		}
+		.mt-1{
+			margin-top:10px;
+		}
+		.pt-1{
+			padding-top:50px;
+		}
+		.col-10{
+			width:80%;
+		}
+		.col-2{
+			width:20%;
+		}
+		.col-3{
+			width:30%;
+		}
+		.col-9{
+			width:70%;
+		}
+		.col-12{
+			width:100%;
+		}
+		.d-flex{
+			display:flex;
+		}
+		.ml-1{
+			margin-left:10px;
+		}
+		.center{
+			text-align:center;
+		}
+		.btn{
+			padding-top:10px;
+			padding-bottom:10px;
+			padding-left:10px;
+			padding-right:10px;
+		}
+		.titlecont{
+			background-color:#525050;
+			color:white;
+		}
+		body{
+			font-family:Arial;
+			background-color:#e6e3e3;
+		}
+		.modal{
+			display:none;
+			height:500px;
+			width:700px;
+			background-color:green;
+			color:white;
+			position:absolute;
+			left:100px;
+			top:100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container bg-danger">
+		<div class="bg-light he-1 d-flex">
+			<div class="he-1 col-10 titlecont">
+				<h1><span class="title1">Калигула (1979)</span></h1>
+				<p class="desc1">Трешовый фильм о худшем императоре Древнего Рима</p>
+			</div>
+			<div class="titlecont col-2 ml-1 center">	
+				<img src="star.png" class="col-3 star1">
+				<h1 class="rate1">4</h1>
+			</div>
+		</div>
+		<div class="bg-light he-2 mt-1 d-flex pt-1">
+			<div class="col-3 he-3">
+				<img src="https://i.pinimg.com/originals/eb/8e/13/eb8e13a68c74c14917e961c96b9a2e64.jpg" class="col-12">
+				<button class="btn button1">Добавить в список</button>
+			</div>
+			<div class="col-9 he-3 ml-1">
+				<iframe class="col-12 vid1" height="360" src="https://www.youtube.com/embed/WACkBTh0W6w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p class="desclong1">«Калигула» — эпический антитоталитарный кинофильм Тинто Брасса о нравах времён правления древнеримского императора Калигулы, вошедшего в историю беспримерной жестокостью, коварством и пороками. Фильм субсидировался порноимперией «Пентхаус», отсюда и скандально непристойный характер некоторых сцен, из-за которых автор сценария Гор Видал снял своё имя из титров, а борцы за нравственность (особенно в Ватикане) называли его «отвратительным, позорным хламом».</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container bg-danger">
+		<div class="bg-light he-1 d-flex titlecont">
+			<div class="he-1 col-10">
+				<h1><span class="title1">Chainsaw Man(?)</span></h1>
+				<p class="desc1">Аниме адаптация одной из самых популярных серий манга Weekly Shonen Jump</p>
+			</div>
+			<div class="titlecont col-2 ml-1 center">	
+				<img src="star.png" class="col-3 star2">
+				<h1 class="rate2">7</h1>
+			</div>
+		</div>
+		<div class="bg-light he-2 mt-1 d-flex pt-1">
+			<div class="col-3 he-3">
+				<img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Chainsawman.jpg/220px-Chainsawman.jpg" class="col-12">
+				<button class="btn button1">Добавить в список</button>
+			</div>
+			<div class="col-9 he-3 ml-1">
+				<iframe class="col-12 vid1" height="360" src="https://www.youtube.com/embed/sJte2xhZeVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p class="desclong1">Chainsaw Man - японская манга, написанная и иллюстрированная Тацуки Фудзимото (автор Fire Punch).</p>
+			</div>
+		</div>
+	</div>
+
+	<div class='modal'>
+		<p>Вы добавили в список</p>
+		<button class='button2'>Закрыть</button>
+	</div>
+
+
+	<script type="text/javascript">
+
+		let modal = document.querySelector('.modal');
+
+		let button1 = document.querySelector('.button1');
+		button1.onclick = function(){
+			modal.style.display = 'block';
+		};
+		let button2 = document.querySelector('.button2');
+		button2.onclick = function(){
+			modal.style.display = 'none';
+		};
+
+		let star1 = document.querySelector('.star1');
+		let count = 0;
+		let text1 = document.querySelector('.rate1');
+
+		let star2 = document.querySelector('.star2');
+		let count1 = 0;
+		let text2 = document.querySelector('.rate2');
+
+		text1.innerHTML = count;
+		text2.innerHTML = count1;
+
+		star1.onclick = function(){
+			count = count + 1;
+			text1.innerHTML = count;
+		}
+
+		star2.onclick = function(){
+			count1 = count1 + 1;
+			text2.innerHTML = count1;
+		}
+
+		let title1 = document.querySelector('.title1');
+		let desc1 = document.querySelector('.desc1');
+		let desclong1 = document.querySelector('.desclong1');
+		let trlr = document.querySelector('.vid1');
+	</script>
+</body>
+</html>
